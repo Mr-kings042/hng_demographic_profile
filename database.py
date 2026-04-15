@@ -31,7 +31,7 @@ else:
     engine = create_engine(DATABASE_URL, echo=False)
 
 # Create tables
-Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine, checkfirst=True)
 
 # Session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
